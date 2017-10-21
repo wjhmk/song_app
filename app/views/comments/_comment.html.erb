@@ -1,0 +1,39 @@
+<div class="row">
+
+        <div class="col-lg-12">
+        <ul class="timeline">
+ 
+              <li>
+              	 <%= div_for(comment) do %>
+                <div class="timeline-image">
+                  <%# comment.image.url(:thumb,:class => "rounded-circle img-fluid")でないことに注意 %>
+                <%= link_to (image_tag comment.image.url(:thumb),:class => "rounded-circle img-fluid"), (comment) %>
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4><%= comment.body %></h4>
+                    <h4 class="subheading">
+                    	<p>
+                    		<small><%= link_to comment.user.name, "/users/#{comment.user_id}" %>の投稿：</small>
+                    	    <strong><%= time_ago_in_words(comment.created_at) %>前</strong>
+                    	</p>
+                     </h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">
+                    	  <%= link_to good_song_comment_path(@song,comment), method: :put, class: "btn btn-default btn-sm" do %>
+          					        <span class="glyphicon glyphicon-thumbs-up">この絵スゴイ:<%= comment.get_upvotes.size %></span>
+          					     <% end %>
+          					      <% if comment.user == current_user -%>
+          							<%= link_to 'コメント削除', comment, method: :delete, data: { confirm: 'このコメントを削除しますか？?' }, class: "btn btn-sm btn-default" %>
+          						  <% end %>
+                    </p>
+                  </div>
+                </div>
+                  <% end %>
+              </li>
+              <li></li>
+       </div>
+
+      </div>
+      

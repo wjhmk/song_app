@@ -1,0 +1,67 @@
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">ログイン</h2>
+            <h3 class="section-subheading text-muted">enter your info to login</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate>
+              <div class="row">
+<div class="col-md-offset-2 col-md-8 col-sm-offset-2">
+              <div class="form-group">
+                
+                    <div class="field">
+                      
+                      
+                      <label for="user_メールアドレス" class="aaa">メールアドレス</label><br />
+                      <input class="form-control" autofocus="autofocus" id="message user_email" name="user[email]" type="email" placeholder="メールアドレスをいれるドン！" type="email" />
+                     
+                      
+                      
+                      <label for="user_パスワード" class="aaa">パスワード</label>
+                      
+                
+                      <input autocomplete="off" class="form-control" id="message user_password" name="user[password]"  placeholder="パスワードをいれるドン！" type="password">
+                      
+                      <div class="field">
+                        <input name="user[remember_me]" type="hidden" value="0" /><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+                        <label for="user_この情報を端末に保存する" class="aaa">この情報を端末に保存する</label>
+                      </div>
+                              
+                     
+                      
+                    </div>
+                    
+</div>
+</div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-xl" type="submit" name="commit">ログイン</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+   <% end %>
+   
+  
+   
+   
+   
+ 
+    
+
+  
+  
+  
+
+

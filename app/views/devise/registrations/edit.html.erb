@@ -1,0 +1,77 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">ユーザー情報を変更する</h2>
+            <h3 class="section-subheading text-muted">change your account</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate>
+              <div class="row">
+<div class="col-md-offset-2 col-md-8 col-sm-offset-2">
+              <div class="form-group">
+                
+                     <div class="field">
+                      
+                      <label for="user_メールアドレス" class="aaa">新しいメールアドレス</label><br />
+                      <input class="form-control" id="message user_email" name="user[email]"  placeholder="メールアドレスをいれるドン！" autofocus="autofocus"  name="user[email]" type="email" value="<%=@user.email%>">
+                      
+                      
+                      <label for="user_ユーザー名" class="aaa">新しいユーザー名</label><br />
+                      <input autofocus="autofocus" class="form-control" id="message user_name" name="user[name]"  placeholder="ユーザー名をいれるドン！" type="text" value="<%=@user.name%>">
+                    
+                      
+                      <label for="user_パスワード" class="aaa">新しいパスワード(6 文字以上入力してください)<br /></label>
+                      <br />
+                      <input autocomplete="off" class="form-control" id="message user_password" name="user[password]"  placeholder="パスワードをいれるドン！" type="password">
+                    
+                       
+                      
+                      <label for="user_確認用パスワード" class="aaa">新しいパスワード（再確認）</label><br />
+                      <input autocomplete="off" class="form-control" id="message user_password_confirmation" name="user[password_confirmation]"  placeholder="確認用パスワードをいれるドン！" type="password">
+                      
+                
+                      <label for="user_current_password" class="aaa">現在のパスワードを入力してください(本人確認のために必要です)</label><br />
+                      <input autocomplete="off" class="form-control"　id="user_current_password" name="user[current_password]" placeholder="現在のパスワードを入力するドン！" type="password" />
+                      
+                      <label for="user_twitter" class="aaa">twitterアカウント（「@」抜きで入力してください） ＊空欄でも構いません（後から追加もできます）</label><br />
+                      <input class="form-control" id="message user_tweet" name="user[tweet]"  placeholder="twitterアカウントをいれるドン！" autofocus="autofocus" type="text" value="<%=@user.tweet%>">
+                      
+                      
+                      <label for="user_introduce" class="aaa">ひとこと</label><br />
+                      <textarea class="form-control" id="message user_introduce" placeholder="コメントを入力してください" name="user[introduce]"><%= @user.introduce %></textarea>
+                      
+                    </div>
+                    
+                    
+</div>
+</div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-xl" type="submit">編集完了</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+   <% end %>
+   
+  
+   
+   
+   
+   
+
+ 
+
+  
+
+
+

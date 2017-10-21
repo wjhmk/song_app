@@ -1,0 +1,98 @@
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">
+                
+                <h1><%= @user.name %>さんのページ</h1>
+            </h2>
+            <h3 class="section-subheading text-muted">
+               <%= @user.introduce %>
+                <% if @user.tweet.present? %>
+                  <ul class="list-inline social-buttons aaa">
+                    
+                    <li class="list-inline-item">
+                      <a href="http://twitter.com/<%= @user.tweet%>">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <% end %>
+            </h3>
+          </div>
+        </div>
+        
+        <div class="row text-center">
+            
+           
+          <div class="col-md-6">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading"><%= link_to '絵＆SS投稿リストだよ！', "/users/#{@user.id}/comments" %></h4>
+            <p class="text-muted">
+                your post index</br>click above link!
+            </p>
+          </div>
+          
+          <div class="col-md-6">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading"><%= link_to '『この曲見たい』リストだよ！', "/users/#{@user.id}/like" %></h4>
+            <p class="text-muted">
+                your post index</br>click above link!
+            </p>
+          </div>
+          
+          <div class="col-md-6">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-music fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading"><%= link_to '曲投稿リストだよ！', "/users/#{@user.id}/songs" %></h4>
+            <p class="text-muted">
+                your post index</br>click above link!
+            </p>
+          </div>
+          
+          <div class="col-md-6">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-music fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading"><%= link_to '『この絵スゴイ』リストだよ！', "/users/#{@user.id}/good" %></h4>
+            <p class="text-muted">
+                your post index</br>click above link!
+            </p>
+          </div>
+          
+ 
+          <% if @user.id==current_user.id %>
+          <div class="col-md-6">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">
+                    <%= link_to 'アカウント情報', edit_user_registration_path %>
+            </h4>
+            <p class="text-muted">
+                your post index</br>click above link!
+            </p>
+          </div>
+          <% end %>
+          
+          
+         
+          
+        </div>
+      </div>
+    </section>
+
+   
+
+
+

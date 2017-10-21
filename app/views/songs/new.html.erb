@@ -1,0 +1,55 @@
+<%= form_for(@song) do |f| %>
+
+<% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @song.errors.count %>つのエラーがあります</h2>
+
+      <ul>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">曲を投稿する</h2>
+            <h3 class="section-subheading text-muted">post your favorite song!</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate>
+              <div class="row">
+<div class="col-md-offset-2 col-md-8 col-sm-offset-2">
+              <div class="form-group">
+                
+                    <div class="field">
+                      <p class="aaa">歌のタイトル</p>
+                      <input class="form-control" id="message song_title" name="song[title]"  placeholder="曲名をいれるドン！" >
+                      <p class="aaa">歌手名</p>
+                      <input class="form-control" id="message song_singer" name="song[singer]"  placeholder="歌手名をいれるドン！" >
+                      <p class="aaa">歌詞や歌のURL</p>
+                      <input class="form-control" id="message song_url" name="song[url]"  placeholder="歌詞や歌のURLをいれるドン！" >
+                      <p class="aaa">歌に対する想い</p>
+                      <textarea class="form-control" id="message song_body" placeholder="歌に対するアツい想いをどうぞ！" required data-validation-required-message="Please enter a message."  name="song[body]"></textarea>
+                    </div>
+                    
+</div>
+</div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-xl" type="submit">この曲を投稿する</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% end %>
+    
