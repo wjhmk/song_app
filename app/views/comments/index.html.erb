@@ -9,15 +9,20 @@
                 <h1><%= @user.name %>さんの絵＆SS</h1>
                 <h3 class="section-subheading text-muted">
                <%= @user.introduce %>
-                <ul class="list-inline social-buttons aaa">
-                  <% if @user.tweet %>
-                  <li class="list-inline-item">
-                    <a href="http://twitter.com/<%= @user.tweet%>">
-                      <i class="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                   <% end %>
-                </ul>
+               
+               
+                <% if @user.tweet.present? %>
+                  <ul class="list-inline social-buttons aaa">
+                    
+                    <li class="list-inline-item">
+                      <a href="http://twitter.com/<%= @user.tweet%>">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                  </ul>
+                <% end %>
+                
+                
             </h3>
               <% else %>
                 <h1>みんなの絵＆SS</h1>
