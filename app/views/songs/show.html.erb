@@ -11,7 +11,7 @@
                  (<a href="<%= @song.url %>">歌詞や歌をみる</a>)</br>
                  <% end %>
                  
-                 <%= @song.body %></br>
+                 </br><%= @song.body %></br>
               |<%= link_to @song.user.name, "/users/#{@song.user_id}" %>の投稿|
               <%= link_to like_song_path(@song), method: :put, class: "btn btn-default btn-sm" do %>
                     <span class="glyphicon glyphicon-chevron-up"></span>
