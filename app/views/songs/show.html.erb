@@ -5,12 +5,17 @@
           <div class="col-lg-12 text-center">
             <h2 class="section-heading"><%= @song.title %></h2>
              <h3 class="section-subheading text-muted aaa">
-                 by <%= @song.singer %>(URL:<%= @song.url %>)</br>
+                 by <%= @song.singer %>
+                 
+                 <% if @song.url.present? %>
+                 (<a href="<%= @song.url %>">歌詞や歌をみる</a>)</br>
+                 <% end %>
+                 
                  <%= @song.body %></br>
               |<%= link_to @song.user.name, "/users/#{@song.user_id}" %>の投稿|
               <%= link_to like_song_path(@song), method: :put, class: "btn btn-default btn-sm" do %>
                     <span class="glyphicon glyphicon-chevron-up"></span>
-                    共感:<%= @song.get_upvotes.size %>
+                    この曲見たい:<%= @song.get_upvotes.size %>
               <% end %>|
               <% if @song.user == current_user %>
               <%= link_to '編集', edit_song_path(@song) %> |
