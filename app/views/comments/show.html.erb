@@ -17,7 +17,6 @@
                 <%# song/:idにいけ。ただし、このコメントに紐づくsongに %> 
                 <%= link_to @comment.song.title, song_path(@comment.song) %><br><small class="author">by <%= @comment.song.singer %></small>
             </h4>
-            
             <p class="text-muted">
                 <%= @comment.body %>
             </p>
