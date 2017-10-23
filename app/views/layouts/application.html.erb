@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= analytics_init if Rails.env.production? %>
 
       <!-- Bootstrap -->
 <link href="file:///Macintosh HD/Users/ren/Desktop/Dreamweaver/css/bootstrap.css" rel="stylesheet">
@@ -43,9 +44,6 @@
     }
     --> 
     </style>
-    
-    <%= analytics_init if Rails.env.production? %>
-
 </head>
 
 
