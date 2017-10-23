@@ -9,17 +9,15 @@ class Comment < ActiveRecord::Base
                     :path => ":attachment/:id/:style.:extension"
  
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
- 
+  # validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
  
   def authenticated_image_url(style)
     image.s3_object(style).url_for(:read, :secure => true)
   end
- 
   
   validates :body, {presence: true, length: {maximum: 140}}
-  
-  
-  
+
+
 end
 
 
