@@ -41,7 +41,7 @@
               <small class="author"><%= link_to song.user.name, "/users/#{song.user_id}" %>の投稿：<%= time_ago_in_words(song.created_at) %> before</small>
               <p class="text-muted">
                 <%= link_to like_song_path(song), method: :put, class: "btn btn-default btn-sm" do %>
-                共感:<%= song.get_upvotes.size %>
+                <span class="glyphicon glyphicon-heart-empty">この曲見たい:<%= song.get_upvotes.size %></span>
                 </p>
               <% end %>
             
