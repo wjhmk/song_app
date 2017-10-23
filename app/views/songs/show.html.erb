@@ -22,6 +22,7 @@
               <%= link_to '削除', @song, method: :delete, data: { confirm: '削除しますか?' }, class: "btn btn-default" %> |
               <% end %>
               <%= link_to '曲一覧', songs_path %>
+              </br><a href="https://twitter.com/share" class="twitter-share-button" data-text="ここに自由にアピールしてね！" data-lang="ja" data-size="large">ツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
              </h3>
              <h3 class="comments_title">
                 この曲への投稿数：<%= @song.comments.count %>
