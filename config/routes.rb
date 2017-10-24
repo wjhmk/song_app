@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'home/top' => "home#top"
+  
+  root to: "home#top"
+  
   resources :comments
 
   devise_for :users
@@ -28,6 +32,6 @@ Rails.application.routes.draw do
     end
   end
   
-  root to: "songs#index"
+  
 end
 
